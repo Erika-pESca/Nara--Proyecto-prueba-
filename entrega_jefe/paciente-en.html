@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" translate="no">
+<head>
+  <meta name="google" content="notranslate">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Love Heals · NARA - Personalized Patient Journey</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAF8F5;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .blur-glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    @keyframes floatMascot {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    .animate-float-mascot {
+      animation: floatMascot 3.4s ease-in-out infinite;
+    }
+  
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined' !important;
+      font-feature-settings: 'liga';
+      display: inline-block;
+      vertical-align: middle;
+    }
+    header, nav, header * {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+    }
+    header .material-symbols-outlined, nav .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined' !important;
+    }
+  
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "cream": "#FAF7F2",
+            "espresso": "#262322",
+            "rose-brand": "#E27D90",
+            "rose-soft": "#FBE9ED",
+            "primary-fixed-dim": "#ffb4a5",
+            "background": "#FAF8F5",
+            "on-background": "#171b2b",
+            "surface": "#FAF8F5",
+            "on-primary-fixed-variant": "#723428",
+            "on-secondary-container": "#795154",
+            "on-surface-variant": "#534340",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#623c40",
+            "on-tertiary-container": "#17362a",
+            "inverse-primary": "#ffb4a5",
+            "surface-container": "#f3ece4",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#2e4d40",
+            "surface-dim": "#d6d9ef",
+            "tertiary-fixed": "#c7ead9",
+            "on-secondary-fixed": "#301216",
+            "tertiary": "#456558",
+            "on-primary": "#ffffff",
+            "on-surface": "#171b2b",
+            "on-primary-fixed": "#3a0a03",
+            "surface-container-high": "#e4e7fe",
+            "secondary-container": "#fdc7cb",
+            "outline": "#86736f",
+            "secondary-fixed-dim": "#eeb9bd",
+            "outline-variant": "#d9c1bd",
+            "tertiary-container": "#7e9f90",
+            "surface-bright": "#faf8ff",
+            "on-primary-container": "#561f14",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#dee1f8",
+            "secondary": "#7c5357",
+            "error": "#ba1a1a",
+            "primary-fixed": "#ffdad3",
+            "tertiary-fixed-dim": "#accebe",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eff0ff",
+            "on-tertiary-fixed": "#002116",
+            "surface-tint": "#8f4b3d",
+            "on-error": "#ffffff",
+            "primary-container": "#d48372",
+            "secondary-fixed": "#ffdadc",
+            "surface-variant": "#dee1f8",
+            "surface-container-low": "#f3f2ff",
+            "primary": "#8f4b3d",
+            "inverse-surface": "#2c3041"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin-sm": "1.25rem"
+          },
+          fontFamily: {
+            "sans": ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+            "serif": ["Playfair Display", "Georgia", "serif"],
+            "headline-lg": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "display-lg": ["Playfair Display"]
+          },
+          fontSize: {
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FAF8F5] font-sans text-on-surface antialiased selection:bg-secondary-container selection:text-primary relative">
+
+  <!-- DEFINICIÓN 3D CLAY DE LA MASCOTA NUBECITA "LUZ" -->
+  <svg style="position:absolute; width:0; height:0; overflow:hidden; pointer-events:none;" aria-hidden="true">
+    <defs>
+      <radialGradient id="cloudBody3D" cx="38%" cy="28%" r="70%">
+        <stop offset="0%" stop-color="#FFFFFF" />
+        <stop offset="55%" stop-color="#FFFBF5" />
+        <stop offset="82%" stop-color="#F2E4D4" />
+        <stop offset="100%" stop-color="#DECBB6" />
+      </radialGradient>
+      <radialGradient id="cloudHighlight" cx="45%" cy="22%" r="45%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="cheekPink" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#F08099" stop-opacity="0.85" />
+        <stop offset="65%" stop-color="#F08099" stop-opacity="0.35" />
+        <stop offset="100%" stop-color="#F08099" stop-opacity="0" />
+      </radialGradient>
+      <filter id="clayDropShadow" x="-20%" y="-20%" width="140%" height="145%">
+        <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#3A2A22" flood-opacity="0.22" />
+      </filter>
+
+      <symbol id="luz-cloud-wink" viewBox="0 0 120 96">
+        <g filter="url(#clayDropShadow)">
+          <path d="M28 78 C13 78 4 68 4 55 C4 43 13 33 25 32 C29 16 43 6 60 6 C77 6 91 16 95 32 C107 33 116 43 116 55 C116 68 107 78 92 78 Z" fill="url(#cloudBody3D)" stroke="#E5D5C3" stroke-width="1.2" />
+          <ellipse cx="56" cy="24" rx="24" ry="13" fill="url(#cloudHighlight)" />
+          <ellipse cx="28" cy="48" rx="14" ry="9" fill="url(#cloudHighlight)" />
+          <ellipse cx="90" cy="48" rx="14" ry="9" fill="url(#cloudHighlight)" />
+          <circle cx="37" cy="54" r="10.5" fill="url(#cheekPink)" />
+          <circle cx="83" cy="54" r="10.5" fill="url(#cheekPink)" />
+          <circle cx="46" cy="46" r="3.6" fill="#473631" />
+          <circle cx="44.8" cy="44.7" r="1.2" fill="#FFFFFF" />
+          <path d="M69 46.5 Q74 41.5 79 46.5" stroke="#473631" stroke-width="3.2" stroke-linecap="round" fill="none" />
+          <path d="M54.5 52.5 Q60 58 65.5 52.5" stroke="#473631" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M60 75 C60 69 60 64 59 61" stroke="#4C7B38" stroke-width="2.6" stroke-linecap="round" fill="none" />
+          <path d="M60 65 C51 64 48 57 52.5 55 C57 53 60 59.5 60 65 Z" fill="#6BA353" />
+          <path d="M60 65 C69 63 72 56 67.5 54 C63 52 60 58.5 60 65 Z" fill="#558B3E" />
+        </g>
+      </symbol>
+
+      <symbol id="luz-cloud-calm" viewBox="0 0 120 96">
+        <g filter="url(#clayDropShadow)">
+          <path d="M28 78 C13 78 4 68 4 55 C4 43 13 33 25 32 C29 16 43 6 60 6 C77 6 91 16 95 32 C107 33 116 43 116 55 C116 68 107 78 92 78 Z" fill="url(#cloudBody3D)" stroke="#E5D5C3" stroke-width="1.2" />
+          <ellipse cx="56" cy="24" rx="24" ry="13" fill="url(#cloudHighlight)" />
+          <ellipse cx="28" cy="48" rx="14" ry="9" fill="url(#cloudHighlight)" />
+          <ellipse cx="90" cy="48" rx="14" ry="9" fill="url(#cloudHighlight)" />
+          <circle cx="36" cy="54" r="10.5" fill="url(#cheekPink)" />
+          <circle cx="84" cy="54" r="10.5" fill="url(#cheekPink)" />
+          <path d="M42 45 Q47 50 52 45" stroke="#473631" stroke-width="3.2" stroke-linecap="round" fill="none" />
+          <path d="M68 45 Q73 50 78 45" stroke="#473631" stroke-width="3.2" stroke-linecap="round" fill="none" />
+          <path d="M54.5 53 Q60 58.5 65.5 53" stroke="#473631" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M60 75 C60 70 60 66 59.5 63" stroke="#4C7B38" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <path d="M60 67 C51 66 48 59 52.5 57 C57 55 60 61.5 60 67 Z" fill="#6BA353" />
+          <path d="M60 67 C69 65 72 58 67.5 56 C63 54 60 60.5 60 67 Z" fill="#558B3E" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- =========================================================
+       HEADER GLOBAL UNIFICADO (FIJO ARRIBA CON MENÚS DESPLEGABLES)
+       ========================================================= -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-espresso/8 shadow-[0_4px_20px_rgba(38,35,34,0.04)]" translate="no">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
+      
+      <!-- LOGO / MARCA -->
+      <a href="index-en.html" class="inline-flex items-center gap-3.5 group shrink-0">
+        <div class="w-10 h-10 rounded-full bg-rose-soft flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
+          <svg viewBox="0 0 36 36" class="w-6 h-6" fill="none">
+            <path d="M18 30C18 30 6 21.8 6 13C6 9.1 9.1 6 13 6C15.3 6 17.3 7.2 18 9C18.7 7.2 20.7 6 23 6C26.9 6 30 9.1 30 13C30 21.8 18 30 18 30Z" fill="#E27D90"/>
+            <path d="M18 29V16.5M18 20C18 17.2 20.8 15 23.5 15.5C23 18.2 20.8 20 18 20ZM18 22.2C18 20 15.5 18.3 13 18.8C13.5 21 15.5 22.2 18 22.2Z" stroke="#415938" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="block font-extrabold text-base tracking-tight text-espresso">Love Heals <span class="text-primary">· NARA</span></span>
+          <span class="block font-serif italic text-xs text-tertiary -mt-0.5">Comprehensive Accompaniment</span>
+        </div>
+      </a>
+
+      <!-- NAVEGACIÓN DESPLEGABLE COMPACTA -->
+      <nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
+        <!-- 1. Inicio -->
+        <a href="index-en.html" class="px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold text-espresso/80 hover:text-espresso hover:bg-espresso/5 transition-colors">
+          Home
+        </a>
+
+        <!-- 2. Menú Desplegable Paciente (Activo en esta página) -->
+        <div class="relative group">
+          <button type="button" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs lg:text-sm font-bold text-primary bg-primary/10 transition-colors">
+            <span>Patient</span>
+            <svg class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform text-espresso/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 w-72 hidden group-hover:block transition-all z-50">
+            <div class="bg-white rounded-2xl shadow-xl border border-espresso/10 p-2 space-y-1">
+              <a href="#hero" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe922;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">My Journey &amp; Stages</span>
+                  <span class="block text-[11px] text-espresso/60">Diagnosis, chemotherapy & recovery</span>
+                </div>
+              </a>
+              <a href="#diario-bienestar" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe745;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Symptom Diary</span>
+                  <span class="block text-[11px] text-espresso/60">Daily log to share with oncologist</span>
+                </div>
+              </a>
+              <a href="#micro-calma" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe176;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Sensory Micro-Calm</span>
+                  <span class="block text-[11px] text-espresso/60">3-7 min audios & Piko-Piko breathing</span>
+                </div>
+              </a>
+              <a href="#circulos-paciente" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe7ef;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Weekly Intimate Circle</span>
+                  <span class="block text-[11px] text-espresso/60">Confidential Zoom sessions</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Menú Desplegable Cuidadores -->
+        <div class="relative group">
+          <button type="button" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-xs lg:text-sm font-bold text-espresso/80 group-hover:text-tertiary group-hover:bg-tertiary/5 transition-colors">
+            <span>Caregivers</span>
+            <svg class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform text-espresso/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 w-72 hidden group-hover:block transition-all z-50">
+            <div class="bg-white rounded-2xl shadow-xl border border-espresso/10 p-2 space-y-1">
+              <a href="cuidadores-en.html" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-tertiary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">&#xea70;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Caregivers Haven</span>
+                  <span class="block text-[11px] text-espresso/60">Practical guide for family and partners</span>
+                </div>
+              </a>
+              <a href="cuidadores-en.html#diccionario" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-tertiary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">&#xe0b7;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">What to Say &amp; What to Avoid</span>
+                  <span class="block text-[11px] text-espresso/60">Comforting phrases without clichés</span>
+                </div>
+              </a>
+              <a href="cuidadores-en.html#hijos" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-tertiary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">&#xf1bd;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Talking with Children</span>
+                  <span class="block text-[11px] text-espresso/60">Age-by-age guide: kids, tweens &amp; teens</span>
+                </div>
+              </a>
+              <a href="cuidadores-en.html#autocuidado" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-tertiary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">&#xe1a3;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Caregiver Self-Care &amp; Respite</span>
+                  <span class="block text-[11px] text-espresso/60">Test de sobrecarga y turnos de descanso</span>
+                </div>
+              </a>
+              <a href="cuidadores-en.html#circulos" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-tertiary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">&#xe7ef;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Family Support Circles</span>
+                  <span class="block text-[11px] text-espresso/60">Safe emotional debrief for loved ones</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Menú Desplegable Recursos & Pilares -->
+        <div class="relative group">
+          <button type="button" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-xs lg:text-sm font-bold text-espresso/80 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+            <span>Resources</span>
+            <svg class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform text-espresso/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-2 w-76 hidden group-hover:block transition-all z-50">
+            <div class="bg-white rounded-2xl shadow-xl border border-espresso/10 p-2 space-y-1">
+              <a href="pilares-en.html#pilar-nutricion" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe56c;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Nutrition &amp; Recipes</span>
+                  <span class="block text-[11px] text-espresso/60">Golden broth, smoothies &amp; nausea relief</span>
+                </div>
+              </a>
+              <a href="pilares-en.html#pilar-biblioteca" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe865;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Guides &amp; Workbooks (PDF)</span>
+                  <span class="block text-[11px] text-espresso/60">Questions for oncologist &amp; symptom logs</span>
+                </div>
+              </a>
+              <a href="pilares-en.html#pilar-movilidad" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe943;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Mindful Movement</span>
+                  <span class="block text-[11px] text-espresso/60">Chair yoga & post-surgery mobility</span>
+                </div>
+              </a>
+              <a href="pilares-en.html#pilar-derechos" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/30 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xea80;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Rights & Benefits</span>
+                  <span class="block text-[11px] text-espresso/60">Medical leave forms & prosthesis bank</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Menú Desplegable Comunidad -->
+        <div class="relative group">
+          <button type="button" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-xs lg:text-sm font-bold text-espresso/80 group-hover:text-primary group-hover:bg-primary/5 transition-colors">
+            <span>Community</span>
+            <svg class="w-3.5 h-3.5 group-hover:rotate-180 transition-transform text-espresso/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 top-full pt-2 w-72 hidden group-hover:block transition-all z-50">
+            <div class="bg-white rounded-2xl shadow-xl border border-espresso/10 p-2 space-y-1">
+              <a href="index.html#circulos" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-primary/5 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe7ef;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Support Circles (Zoom)</span>
+                  <span class="block text-[11px] text-espresso/60">Weekly moderated virtual gatherings</span>
+                </div>
+              </a>
+              <a href="index.html#masterclasses" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-primary/5 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe037;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">Video Catalog</span>
+                  <span class="block text-[11px] text-espresso/60">Practical workshops with specialists</span>
+                </div>
+              </a>
+              <button type="button" onclick="toggleChatWidget()" class="w-full text-left flex items-start gap-3 p-2.5 rounded-xl hover:bg-secondary-fixed/40 transition-colors">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px] mt-0.5" translate="no">&#xe91f;</span>
+                <div>
+                  <span class="block text-xs font-bold text-espresso">NARA · Voice 24/7</span>
+                  <span class="block text-[11px] text-espresso/60">Speak with your companion anytime</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- BOTONES DE ACCIÓN DERECHA -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language Selector ES | EN -->
+        <div class="inline-flex items-center bg-white border border-espresso/15 rounded-full p-0.5 shadow-2xs text-xs font-bold shrink-0">
+          <a href="paciente-en.html" class="px-2.5 py-1 rounded-full text-espresso/70 hover:text-espresso transition-colors" title="Cambiar a Español">ES</a>
+          <span class="px-2.5 py-1 rounded-full bg-primary text-white shadow-2xs">EN</span>
+        </div>
+
+        <!-- Botón Voz NARA -->
+        <button type="button" onclick="toggleChatWidget()" class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-secondary-fixed/70 hover:bg-secondary-fixed text-primary text-xs font-bold transition-all shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse"></span>
+          <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe029;</span>
+          <span class="hidden sm:inline">Voice with NARA</span>
+        </button>
+
+        <!-- Botón Login -->
+        <button onclick="toggleModal('loginModal')"
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary hover:bg-primary-container text-white text-xs font-bold shadow-sm transition-all">
+          <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe7fd;</span>
+          <span>Sign In</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================
+       1. HERO COMBINADO (ESTILO E-MAX + CAMINO DE LA PACIENTE)
+          Transición Crema Izquierda -> Imagen del Mar Derecha
+          + Tarjeta Glassmorphism Interactiva de Selección de Etapa
+       ========================================================= -->
+  <section id="hero" class="relative min-h-[85vh] w-full overflow-hidden flex flex-col justify-between">
+
+    <!-- Fondo del Mar Hawaiano al Amanecer con Transición Suave desde la Izquierda -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85"
+           alt="Santuario de paz frente al mar al amanecer"
+           class="w-full h-full object-cover object-right lg:object-center scale-105" />
+
+      <!-- Degradado de Transición Horizontal (Crema Cálido a la izquierda -> Mar nítido a la derecha) -->
+      <div class="absolute inset-0"
+           style="background: linear-gradient(90deg, #FAF8F5 0%, #FAF8F5 36%, rgba(250,248,245,0.88) 47%, rgba(250,248,245,0.12) 60%, rgba(38,35,34,0.10) 100%);"></div>
+
+      <!-- Resplandor Rosa Suave sobre la parte izquierda -->
+      <div class="pointer-events-none absolute -left-24 top-16 w-[520px] h-[520px] rounded-full opacity-65 blur-3xl"
+           style="background: radial-gradient(circle, rgba(253,199,203,0.55) 0%, rgba(250,248,245,0) 70%);"></div>
+
+      <!-- Fundido inferior suave -->
+      <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FAF8F5] to-transparent"></div>
+    </div>
+
+    <!-- Contenido Central del Hero -->
+    <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 py-10 lg:py-14 w-full my-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+        <!-- Columna Izquierda (Sobre el fondo crema cálido) -->
+        <div class="lg:col-span-6 space-y-5">
+
+          <!-- Breadcrumb sutil -->
+          <div class="flex flex-wrap items-center gap-2 text-xs font-semibold text-on-surface-variant">
+            <a href="index-en.html" class="hover:text-primary transition-colors">Love Heals · NARA</a>
+            <span class="opacity-40">/</span>
+            <span class="text-primary font-bold">I am a Patient</span>
+          </div>
+
+          <!-- Píldora Doble Estilo E-Max -->
+          <div class="inline-flex items-center gap-2.5 bg-secondary-container/80 backdrop-blur-md px-4 py-1.5 rounded-full shadow-2xs border border-primary/15">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-on-secondary-container">
+              PERSONALIZED JOURNEY
+            </span>
+            <span class="text-primary/30">|</span>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-primary">
+              CLINICAL & EMOTIONAL PATHWAY
+            </span>
+          </div>
+
+          <!-- Título Principal -->
+          <h1 class="font-headline-lg text-4xl sm:text-5xl lg:text-[50px] lg:leading-[1.12] text-on-surface tracking-tight">
+            Your Safe Haven in Every Step of the Journey:
+            <span class="block italic font-normal text-primary mt-1">Guided, Heard, and Supported.</span>
+          </h1>
+
+          <!-- Descripción -->
+          <p class="text-sm sm:text-base text-on-surface-variant max-w-xl leading-relaxed">
+            Breast cancer does not have to be walked alone or in the dark. Select where you are in your journey today to receive clear medical answers, relief for today's symptoms, and practical tools validated by oncologists and psycho-oncologists.
+          </p>
+
+          <!-- Píldoras Encadenadas del Orden de Etapas (Estilo E-Max "EL ORDEN DEL ANÁLISIS") -->
+          <div class="pt-1 space-y-2">
+            <span class="block text-[10px] font-extrabold uppercase tracking-[0.18em] text-on-surface-variant/80">
+              THE ORDER OF YOUR CARE PATHWAY:
+            </span>
+            <div class="flex flex-wrap items-center gap-1.5 text-xs">
+              <a href="#fases-medicas" onclick="setEtapa(1)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-espresso/15 font-semibold text-espresso shadow-2xs hover:border-primary transition-colors">
+                <span class="w-4 h-4 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">1</span>
+                <span>Diagnosis</span>
+              </a>
+              <span class="text-espresso/40 font-bold">→</span>
+              <a href="#fases-medicas" onclick="setEtapa(2)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-espresso/15 font-semibold text-espresso shadow-2xs hover:border-primary transition-colors">
+                <span class="w-4 h-4 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">2</span>
+                <span>Chemotherapy</span>
+              </a>
+              <span class="text-espresso/40 font-bold">→</span>
+              <a href="#fases-medicas" onclick="setEtapa(3)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-espresso/15 font-semibold text-espresso shadow-2xs hover:border-primary transition-colors">
+                <span class="w-4 h-4 rounded-full bg-tertiary text-white text-[10px] font-bold flex items-center justify-center">3</span>
+                <span>Surgery</span>
+              </a>
+              <span class="text-espresso/40 font-bold">→</span>
+              <a href="#fases-medicas" onclick="setEtapa(4)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-espresso/15 font-semibold text-espresso shadow-2xs hover:border-primary transition-colors">
+                <span class="w-4 h-4 rounded-full bg-rose-brand text-white text-[10px] font-bold flex items-center justify-center">4</span>
+                <span>Radiation</span>
+              </a>
+              <span class="text-espresso/40 font-bold">→</span>
+              <a href="#fases-medicas" onclick="setEtapa(5)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-espresso/15 font-semibold text-espresso shadow-2xs hover:border-primary transition-colors">
+                <span class="w-4 h-4 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center">5</span>
+                <span>Remission</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-on-primary-container transition-all" href="#descarga-kit" onclick="exportKitPDF()">
+              <span class="material-symbols-outlined notranslate text-[19px]" translate="no">&#xf090;</span>
+              <span>Download "My First 15 Days" Kit (PDF)</span>
+            </a>
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-on-surface font-label-md text-label-md shadow-sm border border-espresso/10 hover:bg-surface-container-low transition-all" href="#diario-bienestar">
+              <span class="material-symbols-outlined notranslate text-primary text-[19px]" translate="no">&#xebcc;</span>
+              <span>Digital Symptom Diary</span>
+            </a>
+          </div>
+
+          <!-- Checkmarks Inferiores (Estilo E-Max) -->
+          <div class="pt-2 flex flex-wrap items-center gap-5 text-xs font-semibold text-espresso/75">
+            <span class="inline-flex items-center gap-1.5">
+              <span class="text-tertiary font-extrabold">✓</span> +1,820 patients supported today
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="text-tertiary font-extrabold">✓</span> 100% Free & confidential
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <span class="text-tertiary font-extrabold">✓</span> Validated by breast cancer specialists
+            </span>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Paisaje Libre (Sin tarjeta de fondo para que luzca el mar al completo) -->
+        <div class="lg:col-span-6 flex flex-col justify-end items-start lg:items-end min-h-[280px] lg:min-h-[420px]">
+          <div class="max-w-sm space-y-3 lg:text-right">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-black/25 backdrop-blur-xs text-white text-[11px] font-bold uppercase tracking-wider">
+              <span class="material-symbols-outlined notranslate text-[15px]" translate="no">&#xe943;</span>
+              <span>Aloha Mana • Sanctuary of Peace</span>
+            </span>
+            <p class="font-serif italic text-xl sm:text-2xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)] leading-snug">
+              “Breathe deeply: this day is lived one gentle moment at a time.”
+            </p>
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/85 backdrop-blur-sm shadow-md text-left">
+              <div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+                <span class="material-symbols-outlined notranslate text-[18px]" translate="no">&#xeb4c;</span>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-on-surface leading-tight">Gentle Rhythm</p>
+                <p class="text-[11px] text-on-surface-variant">Unrushed, tailored to your energy today</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <main class="w-full">
+    <div class="flex flex-col w-full">
+
+      <!-- 2. NAVEGADOR DE FASES MÉDICAS (TABS INTERACTIVAS) -->
+      <section class="max-w-[1200px] w-full mx-auto px-margin-sm md:px-margin py-space-xl" id="fases-medicas">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+          <div>
+            <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Clinical & Wellness Pathway</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Where are you in your journey today?</h2>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            Click on any phase to explore your tailored care plan, medical recommendations, and specific coping tools.
+          </p>
+        </div>
+
+        <!-- Phase Selector Grid / Tabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm" id="etapas-tablist" role="tablist">
+          <!-- Etapa 1 -->
+          <button class="phase-tab text-left p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" id="tab-etapa-1" onclick="setEtapa(1)" type="button">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">01 • Fase Inicial</span>
+                <span class="material-symbols-outlined notranslate text-on-surface-variant text-[20px] group-hover:text-primary transition-colors" translate="no">&#xe85d;</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-[19px] leading-tight">Newly Diagnosed</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Initial shock, second opinions, and fear-free medical glossary.</p>
+            </div>
+            <span class="tab-indicator mt-space-md text-[12px] font-label-sm text-primary flex items-center gap-1 opacity-0 transition-opacity">
+              <span>Ver fase</span> →
+            </span>
+          </button>
+
+          <!-- Etapa 2 (Active by default) -->
+          <button class="phase-tab text-left p-space-md rounded-2xl bg-primary text-on-primary shadow-lg ring-2 ring-primary/20 transition-all flex flex-col justify-between group active-phase" id="tab-etapa-2" onclick="setEtapa(2)" type="button">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm text-label-sm text-on-primary font-medium">02 • Tratamiento Activo</span>
+                <span class="material-symbols-outlined notranslate text-on-primary text-[20px]" translate="no">&#xe0fa;</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-primary text-[19px] leading-tight">Chemotherapy / Immuno</h3>
+              <p class="font-body-sm text-body-sm text-on-primary opacity-90 mt-2 line-clamp-2">Infusions, comfort kit, nausea management, and hair changes.</p>
+            </div>
+            <span class="tab-indicator mt-space-md text-[12px] font-label-sm text-on-primary flex items-center gap-1 opacity-100 transition-opacity">
+              <span>Fase seleccionada</span> •
+            </span>
+          </button>
+
+          <!-- Etapa 3 -->
+          <button class="phase-tab text-left p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" id="tab-etapa-3" onclick="setEtapa(3)" type="button">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">03 • Surgery</span>
+                <span class="material-symbols-outlined notranslate text-on-surface-variant text-[20px] group-hover:text-primary transition-colors" translate="no">&#xe3f3;</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-[19px] leading-tight">Surgery & Mastectomy</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Drain care, surgery prep, and body reconciliation.</p>
+            </div>
+            <span class="tab-indicator mt-space-md text-[12px] font-label-sm text-primary flex items-center gap-1 opacity-0 transition-opacity">
+              <span>Ver fase</span> →
+            </span>
+          </button>
+
+          <!-- Etapa 4 -->
+          <button class="phase-tab text-left p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" id="tab-etapa-4" onclick="setEtapa(4)" type="button">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">04 • Terapia Continua</span>
+                <span class="material-symbols-outlined notranslate text-on-surface-variant text-[20px] group-hover:text-primary transition-colors" translate="no">&#xe430;</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-[19px] leading-tight">Radioterapia y Hormonal</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Sensitive Skin, sofocos, rigidez articular y descanso reparador.</p>
+            </div>
+            <span class="tab-indicator mt-space-md text-[12px] font-label-sm text-primary flex items-center gap-1 opacity-0 transition-opacity">
+              <span>Ver fase</span> →
+            </span>
+          </button>
+
+          <!-- Etapa 5 -->
+          <button class="phase-tab text-left p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" id="tab-etapa-5" onclick="setEtapa(5)" type="button">
+            <div>
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">05 • Sobrevivencia</span>
+                <span class="material-symbols-outlined notranslate text-on-surface-variant text-[20px] group-hover:text-primary transition-colors" translate="no">&#xe545;</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-[19px] leading-tight">Life in Remission</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Vencer el 'scanxiety', nueva identidad y chequeos de control.</p>
+            </div>
+            <span class="tab-indicator mt-space-md text-[12px] font-label-sm text-primary flex items-center gap-1 opacity-0 transition-opacity">
+              <span>Ver fase</span> →
+            </span>
+          </button>
+        </div>
+
+        <!-- 3. MÓDULO DETALLADO DE LA FASE SELECCIONADA -->
+        <div class="mt-space-lg p-space-md md:p-space-lg rounded-3xl bg-surface-container-lowest shadow-md">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary" id="phase-focus-label">Phase in Focus: Chemotherapy & Infusions</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mt-1" id="phase-content-title">
+                Your Weekly Care & Relief Plan (Chemotherapy)
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1" id="phase-content-desc">
+                Diseñado con psicooncólogas y enfermeras de infusión: pasos concretos y gentiles para que recuperes el control de tus sensaciones.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Enfoque actual:</span>
+              <span class="px-space-md py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="phase-content-badge">Ciclo 3 de 6</span>
+            </div>
+          </div>
+
+          <!-- Cards Grid of Care Plan -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-space-sm">
+            <!-- Card 1 -->
+            <div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between transition-transform hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-secondary-fixed-dim/60 flex items-center justify-center text-on-secondary-fixed mb-space-md">
+                  <span class="material-symbols-outlined notranslate text-[24px]" translate="no" id="c1-icon">&#xf235;</span>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Step 1 • Preparation</span>
+                <h4 class="font-headline-md text-headline-md text-[20px] text-on-surface mt-1" id="c1-title">Before your infusion</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" id="c1-desc">
+                  Arma tu bolso de confort desde la noche anterior: manta térmica liviana, calcetines afelpados, caramelos de jengibre natural para saliva ácida y auriculares con audios de olas de Hanalei.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[16px] text-tertiary" translate="no">&#xe86c;</span> Checklist lista
+                </span>
+                <a href="#diario-bienestar" class="text-primary hover:text-on-primary-container font-label-sm text-label-sm underline">Ver lista completa</a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between transition-transform hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-space-md">
+                  <span class="material-symbols-outlined notranslate text-[24px]" translate="no" id="c2-icon">&#xe798;</span>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Step 2 • First Days</span>
+                <h4 class="font-headline-md text-headline-md text-[20px] text-on-surface mt-1" id="c2-title">Days 1 to 5 post-chemo</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" id="c2-desc">
+                  Protocolo de hidratación guiada a sorbos (mínimo 2 litros diarios sin forzar). Batidos fríos de manzana o papaya, sin olores calientes penetrantes, y descanso horizontal programado sin culpa.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[16px] text-tertiary" translate="no">&#xe855;</span> Ritmo gentil
+                </span>
+                <a href="#diario-bienestar" class="text-primary hover:text-on-primary-container font-label-sm text-label-sm underline">Nutrition guide</a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col justify-between transition-transform hover:-translate-y-1">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-space-md">
+                  <span class="material-symbols-outlined notranslate text-[24px]" translate="no" id="c3-icon">&#xeb3b;</span>
+                </div>
+                <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Step 3 • Sensory Comfort Kit</span>
+                <h4 class="font-headline-md text-headline-md text-[20px] text-on-surface mt-1" id="c3-title">Key Symptom Relief</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" id="c3-desc">
+                  Uso de cubiertos de madera o bambú si percibes sabor metálico. Baños de hielo en guantes para prevenir neuropatía periférica y compresas de manzanilla tibia en ojos si hay fotofobia.
+                </p>
+              </div>
+              <div class="pt-space-md mt-space-md flex items-center justify-between">
+                <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[16px] text-tertiary" translate="no">&#xea4b;</span> Oncology approved
+                </span>
+                <a href="#diario-bienestar" class="text-primary hover:text-on-primary-container font-label-sm text-label-sm underline">Log symptom</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. HERRAMIENTA PRÁCTICA: BITÁCORA DIARIA DE SÍNTOMAS ("MI DIARIO DE BIENESTAR") -->
+      <section class="max-w-[1200px] w-full mx-auto px-margin-sm md:px-margin py-space-xl" id="diario-bienestar">
+        <div class="p-space-lg md:p-space-xl rounded-3xl bg-surface-container-high shadow-lg relative overflow-hidden">
+          <!-- Background floral/wave ambient accent -->
+          <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-fixed/40 blur-2xl pointer-events-none"></div>
+          <div class="max-w-3xl mb-space-lg">
+            <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Herramienta Interactiva Gratuita</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">My Daily Wellness & Symptom Log</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Llevar un registro diario te ayuda a entender los ciclos de tu cuerpo y le entrega a tu oncólogo información fidedigna para ajustar tus medicamentos de soporte.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            <!-- Input Form Area -->
+            <div class="lg:col-span-8 bg-surface-container-lowest p-space-md md:p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-lg">
+              <!-- Energy Level -->
+              <div>
+                <div class="flex items-center justify-between mb-space-xs">
+                  <label class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">&#xea0b;</span>
+                    How is your energy level today?
+                  </label>
+                  <span class="font-label-md text-label-md px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container" id="energy-val-badge">6 de 10 - Pausada pero activa</span>
+                </div>
+                <div class="flex items-center gap-space-sm mt-space-sm">
+                  <span class="text-[18px]">😴</span>
+                  <input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" id="energy-slider" max="10" min="1" oninput="updateEnergy(this.value)" type="range" value="6"/>
+                  <span class="text-[18px]">🌿</span>
+                </div>
+                <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-1 px-1">
+                  <span>Necesito cama total (1)</span>
+                  <span>Peaceful, steady energy (10)</span>
+                </div>
+              </div>
+              <!-- Symptom & Emotional Chips -->
+              <div>
+                <label class="font-label-lg text-label-lg text-on-surface block mb-space-xs">
+                  Symptoms and feelings present today (tap all that apply):
+                </label>
+                <div class="flex flex-wrap gap-2 pt-1" id="symptoms-container">
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Fatiga suave
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Mild nausea
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Metallic Taste
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Dolor muscular
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Insomnia
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm" onclick="toggleTag(this)" type="button">
+                    Serenidad
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm" onclick="toggleTag(this)" type="button">
+                    Esperanza
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Sensibilidad emocional
+                  </button>
+                  <button class="tag-pill px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-secondary-container" onclick="toggleTag(this)" type="button">
+                    Piel reseca
+                  </button>
+                </div>
+              </div>
+              <!-- Diary Note -->
+              <div>
+                <label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between mb-space-xs" for="palabra-dia">
+                  <span>A word or reflection for your day:</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Privado y cifrado</span>
+                </label>
+                <div class="relative">
+                  <textarea class="w-full p-space-md rounded-2xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none transition-all" id="palabra-dia" placeholder="Ejemplo: Hoy me permití descansar sin culpas. La infusión de menta con hielo me ayudó mucho con el estómago..." rows="3"></textarea>
+                </div>
+              </div>
+              <!-- Actions -->
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+                <button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-on-primary-container shadow-md transition-all" id="save-btn" onclick="saveRecord()" type="button">
+                  <span class="material-symbols-outlined notranslate text-[18px]" translate="no">&#xe866;</span>
+                  Save to my oncology visit summary
+                </button>
+                <span class="text-tertiary font-label-sm text-label-sm hidden flex items-center gap-1" id="save-feedback">
+                  <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe5ca;</span> Saved with care to your personal log!
+                </span>
+              </div>
+            </div>
+
+            <!-- Weekly Summary Mini-Report -->
+            <div class="lg:col-span-4 bg-surface-container-lowest p-space-md md:p-space-lg rounded-2xl shadow-sm flex flex-col justify-between" id="descarga-kit">
+              <div>
+                <div class="flex items-center justify-between mb-space-sm">
+                  <h3 class="font-headline-md text-headline-md text-[18px] text-on-surface">Resumen Semanal</h3>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Last 7 Days</span>
+                </div>
+                <!-- Mini SVG Bar/Curve Chart -->
+                <div class="p-space-sm rounded-xl bg-surface-container-low my-space-sm">
+                  <div class="flex justify-between text-[11px] font-label-sm text-on-surface-variant mb-2">
+                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Today</span>
+                  </div>
+                  <svg class="w-full h-20 overflow-visible" viewBox="0 0 280 70">
+                    <!-- Grid Lines -->
+                    <line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="2 2" x1="0" x2="280" y1="15" y2="15"></line>
+                    <line class="text-outline-variant/30" stroke="currentColor" stroke-dasharray="2 2" x1="0" x2="280" y1="45" y2="45"></line>
+                    <!-- Area -->
+                    <polygon class="text-primary-fixed/40" fill="currentColor" points="0,55 45,45 90,60 135,35 180,25 225,30 270,20 270,70 0,70"></polygon>
+                    <!-- Polyline -->
+                    <polyline class="text-primary" fill="none" points="0,55 45,45 90,60 135,35 180,25 225,30 270,20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+                    <!-- Data dots -->
+                    <circle class="fill-primary" cx="0" cy="55" r="3.5"></circle>
+                    <circle class="fill-primary" cx="45" cy="45" r="3.5"></circle>
+                    <circle class="fill-primary" cx="90" cy="60" r="3.5"></circle>
+                    <circle class="fill-primary" cx="135" cy="35" r="3.5"></circle>
+                    <circle class="fill-primary" cx="180" cy="25" r="3.5"></circle>
+                    <circle class="fill-primary" cx="225" cy="30" r="3.5"></circle>
+                    <circle class="fill-on-primary-container" cx="270" cy="20" r="4.5"></circle>
+                  </svg>
+                  <div class="flex items-center justify-between mt-2 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+                    <span>Average energy:</span>
+                    <span class="font-bold text-primary">6.8 / 10</span>
+                  </div>
+                </div>
+                <div class="space-y-space-xs mt-space-md">
+                  <div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> Nausea managed</span>
+                    <span class="font-label-md text-label-md">85% free days</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Adequate hydration</span>
+                    <span class="font-label-md text-label-md">6 of 7 days</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface">
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span> Sleep hours reparador</span>
+                    <span class="font-label-md text-label-md">7.2 h promedio</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-md mt-space-md">
+                <button class="w-full inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-full bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-md text-label-md transition-all shadow-sm" onclick="exportReport()" type="button">
+                  <span class="material-symbols-outlined notranslate text-[18px]" translate="no">&#xe415;</span>
+                  Exportar Reporte para el Oncólogo (PDF)
+                </button>
+                <p class="font-label-sm text-label-sm text-center text-on-surface-variant mt-2" id="pdf-toast-msg">
+                  Formato estandarizado con gráfica de evolución.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CÁPSULAS DE MICRO-CALMA AUDIOVISUAL (EFECTO HAWÁI) -->
+      <section class="max-w-[1200px] w-full mx-auto px-margin-sm md:px-margin py-space-xl" id="micro-calma">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+          <div>
+            <div class="inline-flex items-center gap-1 px-space-md py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm mb-space-xs">
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe176;</span>
+              Alivio Inmediato en 3 a 7 Minutos
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Cápsulas de Sensory Micro-Calm</h2>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Diseñadas para esos instantes en salas de espera, antes de entrar al tomógrafo o cuando la mente se llena de preguntas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <!-- Media 1: Audio Océano Piko-Piko -->
+          <div class="p-space-md rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
+            <div>
+              <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-space-md bg-surface-container">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Espuma suave del océano Pacífico sobre arena cálida en Hawái" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW64c4vcDdgEDSP5QNzZasMxfcTWPe5CBpT48IazzW-mDyGTbyF9kn4noq2uzuRyO1A6U7CrRq123-hG3greULkfi-hia5KsK5OiGLLBQUuuc3qWq-N27jEpXrRbXF6yul9V3ykhp7IS2A_jvF-yzDN7zfxV4N8TAMa0eqsgg7mZnDvAOH2sloQopO1G9rxJAQ7FqTUKh-w9lwUCYe8l6E_yXAMyphPZfGprsh-s8"/>
+                <div class="absolute inset-0 bg-on-surface/20 flex items-center justify-center">
+                  <button class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary shadow-lg flex items-center justify-center hover:scale-110 transition-transform" type="button" onclick="playCapsule('Ocean Piko-Piko Breathwork (3:15 min)')">
+                    <span class="material-symbols-outlined notranslate text-[28px] fill-current" translate="no">&#xe037;</span>
+                  </button>
+                </div>
+                <span class="absolute top-3 left-3 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[14px] text-tertiary" translate="no">&#xf01f;</span> Audio Guiado
+                </span>
+                <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-on-surface/70 text-surface-container-lowest font-label-sm text-label-sm">
+                  3:15 min
+                </span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-[20px] text-on-surface">
+                Ocean Piko-Piko Breathwork
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Técnica hawaiana ancestral para desacelerar palpitaciones y calmar el nervio vago ante la aguja o la espera.
+              </p>
+            </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe406;</span> Con sonido de olas de Maui
+              </span>
+              <button class="text-primary font-label-md text-label-md font-medium hover:underline" type="button" onclick="playCapsule('Ocean Piko-Piko Breathwork (3:15 min)')">
+                Escuchar ahora
+              </button>
+            </div>
+          </div>
+
+          <!-- Media 2: Gentle Yoga Video -->
+          <div class="p-space-md rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
+            <div>
+              <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-space-md bg-surface-container">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mujer practicando yoga suave sentada frente al mar en Hawái" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRBq0avLZ3BKga-dY7yNnWiwvBurOjLMJ4UAtx7FhNS7l4aGZteBuGj4QEk8I6c4rb4ICo73CF1wPr7XTAEPIkfMv_LNQb9oLVNNA9mB1_-aQj_Z0SA-R9sLX4jkNOtKsuwRAxczch28FfZzyDGmCzXsPyoKW9CsO-tMQAJnJdf762EnfvAKRtxG0KU0ozBBwV1HptZ-z2Qx_JS3Yl25W5SF_MzrXlQudzWPl7tSw"/>
+                <div class="absolute inset-0 bg-on-surface/20 flex items-center justify-center">
+                  <button class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary shadow-lg flex items-center justify-center hover:scale-110 transition-transform" type="button" onclick="playCapsule('Movilidad Suave de Pecho y Brazos (5:20 min)')">
+                    <span class="material-symbols-outlined notranslate text-[28px] fill-current" translate="no">&#xe037;</span>
+                  </button>
+                </div>
+                <span class="absolute top-3 left-3 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[14px] text-primary" translate="no">&#xe04b;</span> Video Práctico
+                </span>
+                <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-on-surface/70 text-surface-container-lowest font-label-sm text-label-sm">
+                  5:20 min
+                </span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-[20px] text-on-surface">
+                Movilidad Suave de Pecho y Brazos
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Movimientos gentiles sentada frente al mar para aliviar contracturas musculares y drenar tensión linfática sin esfuerzo.
+              </p>
+            </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">&#xe92c;</span> Fisioterapia oncológica
+              </span>
+              <button class="text-primary font-label-md text-label-md font-medium hover:underline" type="button" onclick="playCapsule('Movilidad Suave de Pecho y Brazos (5:20 min)')">
+                Reproducir
+              </button>
+            </div>
+          </div>
+
+          <!-- Media 3: Meditación Guiada Alivio Físico -->
+          <div class="p-space-md rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
+            <div>
+              <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-space-md bg-surface-container">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mujer meditando serenamente en una cala de Hawái" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADnpeHQGwmlxY1cgeLdzMJ6sLWcidLjp1xcjeIotSXbJNnWAwltloVuAlFIntzEqkT7ebJ6WMi_K2Ezp6lBXQ9SsKOaLXkBg2o-dvbpAjAC8cYEBCEyqNxje7UxX9Gcmx1y3Yi1hZ3hCJwKbZAc03lSUCB-3j6SshWsM9QH4Eq5AnDDPDOb8YDtaZujonpbv8rSt-X6gLFNJ75AygNtelWT-DHljmF_DWCB6Bhybk"/>
+                <div class="absolute inset-0 bg-on-surface/20 flex items-center justify-center">
+                  <button class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary shadow-lg flex items-center justify-center hover:scale-110 transition-transform" type="button" onclick="playCapsule('Aceptación y Alivio del Malestar - Dra. Alana Ka\'uhane (7:40 min)')">
+                    <span class="material-symbols-outlined notranslate text-[28px] fill-current" translate="no">&#xe037;</span>
+                  </button>
+                </div>
+                <span class="absolute top-3 left-3 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[14px] text-tertiary" translate="no">&#xe943;</span> Meditación
+                </span>
+                <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-on-surface/70 text-surface-container-lowest font-label-sm text-label-sm">
+                  7:40 min
+                </span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-[20px] text-on-surface">
+                Aceptación y Alivio del Malestar
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Dirigido por la Dra. Alana Ka'uhane, especialista en psicooncología: suelta la resistencia física y abraza tu cuerpo con dignidad.
+              </p>
+            </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">&#xea4a;</span> Psicooncología guiada
+              </span>
+              <button class="text-primary font-label-md text-label-md font-medium hover:underline" type="button" onclick="playCapsule('Aceptación y Alivio del Malestar - Dra. Alana Ka\'uhane (7:40 min)')">
+                Escuchar ahora
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Audio/Video Player Banner -->
+        <div id="capsule-player-banner" class="hidden mt-6 p-4 rounded-2xl bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-between shadow-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined notranslate text-tertiary text-[26px] animate-pulse" translate="no">&#xe1b8;</span>
+            <div>
+              <span class="text-label-sm uppercase tracking-wider font-bold text-tertiary block">Reproduciendo cápsula sensorial</span>
+              <span id="capsule-player-title" class="text-body-sm font-bold text-on-surface">Ocean Piko-Piko Breathwork</span>
+            </div>
+          </div>
+          <button type="button" onclick="document.getElementById('capsule-player-banner').classList.add('hidden')" class="px-3 py-1 rounded-full bg-surface-container-lowest text-xs font-bold text-on-surface hover:bg-surface-container">
+            Cerrar reproductor ✕
+          </button>
+        </div>
+      </section>
+
+      <!-- 6. COMUNIDAD DE PACIENTES EN TU MISMA FASE & CÍRCULOS -->
+      <section class="max-w-[1200px] w-full mx-auto px-margin-sm md:px-margin py-space-xl" id="circulos-paciente">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center p-space-lg md:p-space-xl rounded-3xl bg-secondary-container/40">
+          <div class="lg:col-span-8">
+            <div class="inline-flex items-center gap-1 px-space-md py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm mb-space-sm">
+              <span class="material-symbols-outlined notranslate text-primary text-[16px]" translate="no">&#xe7ef;</span>
+              Weekly Intimate Circle
+            </div>
+            <h3 class="font-headline-lg text-headline-lg text-on-surface">
+              Support Circle: Patients in Active Chemotherapy
+            </h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">
+              Nadie comprende mejor lo que sientes en la silla de infusión que otra mujer que está viviendo lo mismo esta semana. Espacios reducidos a 8 pacientes por sesión, moderados con calidez por psicólogas oncológicas especializadas.
+            </p>
+            <div class="flex flex-wrap items-center gap-space-md mt-space-md pt-space-xs">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">&#xe935;</span>
+                <div>
+                  <p class="font-label-md text-label-md text-on-surface">Próximo encuentro</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Miércoles, 18:00 hrs (Vía Zoom Seguro)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined notranslate text-tertiary text-[20px]" translate="no">&#xe897;</span>
+                <div>
+                  <p class="font-label-md text-label-md text-on-surface">Privacidad Garantizada</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Cámara opcional • Sin grabaciones</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">&#xf016;</span>
+                <div>
+                  <p class="font-label-md text-label-md text-on-surface">Cupo Restante</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">3 de 8 lugares disponibles</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
+            <div class="w-full bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm text-center">
+              <div class="flex -space-x-2 justify-center py-1">
+                <span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-xs font-bold text-on-primary-fixed">MC</span>
+                <span class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-xs font-bold text-on-secondary-fixed">LR</span>
+                <span class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-xs font-bold text-on-tertiary-fixed">VT</span>
+                <span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-xs font-bold text-on-surface">+5</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Acompañado por <span class="font-semibold text-on-surface">Lic. Elena Morales</span> (Psicooncóloga)
+              </p>
+              <button class="w-full py-space-sm rounded-full bg-primary hover:bg-on-primary-container text-on-primary font-label-md text-label-md shadow-md transition-all" type="button" onclick="reservePatientCircle(this)">
+                Reservar mi lugar confidencial
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER GLOBAL UNIFICADO -->
+  <footer class="w-full bg-[#F3EFEA] border-t border-espresso/10 text-espresso shadow-[0_-4px_24px_rgba(45,49,66,0.03)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-28">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1: Marca y Misión -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-rose-soft flex items-center justify-center shadow-2xs">
+              <svg viewBox="0 0 36 36" class="w-6 h-6" fill="none">
+                <path d="M18 30C18 30 6 21.8 6 13C6 9.1 9.1 6 13 6C15.3 6 17.3 7.2 18 9C18.7 7.2 20.7 6 23 6C26.9 6 30 9.1 30 13C30 21.8 18 30 18 30Z" fill="#E27D90"/>
+                <path d="M18 29V16.5M18 20C18 17.2 20.8 15 23.5 15.5C23 18.2 20.8 20 18 20ZM18 22.2C18 20 15.5 18.3 13 18.8C13.5 21 15.5 22.2 18 22.2Z" stroke="#415938" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block font-headline-md text-headline-md text-primary font-serif font-bold">Love Heals · NARA</span>
+              <span class="block text-xs text-espresso/60 -mt-0.5">Comprehensive Accompaniment</span>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-espresso/75 leading-relaxed">
+            Un refugio seguro para transitar el cáncer de mama sin soledad. Contención emocional, médica y práctica para la paciente, su pareja y su familia.
+          </p>
+          <div class="flex items-center gap-2 text-tertiary text-xs font-semibold">
+            <span class="material-symbols-outlined notranslate text-[18px]" translate="no">&#xef76;</span>
+            <span>Endorsed by psycho-oncologists &amp; clinical nutritionists</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Care Pathways -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-espresso tracking-tight">Care Pathways</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-espresso/70">
+            <li><a href="paciente-en.html" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Camino de la Paciente (Etapas)</a></li>
+            <li><a href="paciente-en.html#diario-bienestar" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Mi Symptom Diary</a></li>
+            <li><a href="paciente-en.html#micro-calma" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Micro-Calm &amp; Breathwork</a></li>
+            <li><a href="cuidadores-en.html" class="hover:text-tertiary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-tertiary/60"></span>Caregiver Haven &amp; Partners</a></li>
+            <li><a href="cuidadores-en.html#diccionario" class="hover:text-tertiary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-tertiary/60"></span>What to say and what to avoid</a></li>
+            <li><a href="cuidadores-en.html#hijos" class="hover:text-tertiary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-tertiary/60"></span>How to talk with children</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Los 4 Pilares & Recursos -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-espresso tracking-tight">4 Pillars &amp; Resources</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-espresso/70">
+            <li><a href="pilares-en.html#pilar-nutricion" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Nutrition &amp; Recipes (Nausea)</a></li>
+            <li><a href="pilares-en.html#pilar-biblioteca" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Downloadable Guides &amp; Workbooks (PDF)</a></li>
+            <li><a href="pilares-en.html#pilar-movilidad" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Gentle Mobility &amp; Restorative Yoga</a></li>
+            <li><a href="pilares-en.html#pilar-derechos" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Derechos Laborales y Licencias</a></li>
+            <li><a href="pilares-en.html#pilar-derechos" class="hover:text-primary transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/60"></span>Prosthetics &amp; Wigs Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Líneas de Apoyo y Contacto -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-espresso tracking-tight">24/7 Helpline &amp; Care</h4>
+          <ul class="space-y-3 text-xs sm:text-sm text-espresso/75">
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined notranslate text-primary text-[19px] shrink-0 mt-0.5" translate="no">&#xe0b0;</span>
+              <div>
+                <span class="font-bold text-espresso block">800 240 4325</span>
+                <span class="text-xs text-espresso/60">Toll-free compassionate support line</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined notranslate text-tertiary text-[19px] shrink-0 mt-0.5" translate="no">&#xe0b7;</span>
+              <div>
+                <span class="font-bold text-espresso block">Direct Support Chat</span>
+                <span class="text-xs text-espresso/60">Gentle messaging guidance</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined notranslate text-primary text-[19px] shrink-0 mt-0.5" translate="no">&#xe7ef;</span>
+              <div>
+                <span class="font-bold text-espresso block">Weekly Listening Circles (Zoom)</span>
+                <span class="text-xs text-espresso/60">Free weekly guided group sessions</span>
+              </div>
+            </li>
+            <li class="pt-1">
+              <button type="button" onclick="toggleChatWidget()" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-primary text-xs font-bold hover:bg-secondary-fixed-dim transition-colors">
+                <span class="w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse"></span>
+                <span>Speak con NARA Voz en vivo</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior de copyright y términos -->
+      <div class="pt-6 border-t border-espresso/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-espresso/60">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined notranslate text-primary text-[16px]" translate="no">&#xea70;</span>
+          <span>Love Heals · NARA Foundation © 2026. Designed with warmth, dignity, and care.</span>
+        </div>
+        <div class="flex items-center gap-5">
+          <a class="hover:text-espresso transition-colors" href="#">Privacy & Confidentiality</a>
+          <a class="hover:text-espresso transition-colors" href="#">Terms of Service</a>
+          <a class="hover:text-espresso transition-colors" href="#">Medical Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WIDGET FLOTANTE DE NARA (MODO VOZ FLUIDA ESTILO CHATGPT + CHAT) -->
+  <style>
+    @keyframes cloudOrbFlow {
+      0% { background-position: 0% 50%; transform: scale(1) rotate(0deg); }
+      50% { background-position: 100% 50%; transform: scale(1.06) rotate(4deg); }
+      100% { background-position: 0% 50%; transform: scale(1) rotate(0deg); }
+    }
+    @keyframes cloudMistDrift {
+      0%, 100% { transform: translate(-8%, 6%) scale(1.1); opacity: 0.85; }
+      50% { transform: translate(8%, -6%) scale(1.25); opacity: 0.98; }
+    }
+    @keyframes voiceWaveRing {
+      0% { transform: scale(0.95); opacity: 0.65; }
+      70% { transform: scale(1.38); opacity: 0; }
+      100% { transform: scale(1.38); opacity: 0; }
+    }
+    .nara-voice-sphere {
+      background: radial-gradient(circle at 50% 28%, #2563EB 0%, #3B82F6 36%, #93C5FD 64%, #FFFFFF 92%);
+      background-size: 180% 180%;
+      animation: cloudOrbFlow 6s ease-in-out infinite;
+      box-shadow: inset 0 -18px 32px rgba(255,255,255,0.95), inset 0 12px 28px rgba(29,78,216,0.40), 0 20px 48px rgba(37,99,235,0.32);
+    }
+    .nara-voice-sphere.listening-mode {
+      background: radial-gradient(circle at 35% 25%, #FBCFE8 0%, #E27D90 48%, #F472B6 78%, #FFF1F2 100%);
+      box-shadow: inset 0 -14px 28px rgba(255,255,255,0.9), inset 0 10px 24px rgba(157,23,77,0.35), 0 16px 44px rgba(226,125,144,0.45);
+    }
+    .nara-cloud-layer {
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0) 72%);
+      animation: cloudMistDrift 4.5s ease-in-out infinite;
+    }
+    .nara-ring-anim {
+      animation: voiceWaveRing 2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    }
+  </style>
+
+  <div class="fixed bottom-20 lg:bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <!-- Panel de Voz y Conversación estilo ChatGPT Voice Mode -->
+    <div id="floating-chat-panel" class="hidden w-[380px] sm:w-[440px] max-w-[calc(100vw-2rem)] bg-white rounded-[32px] shadow-[0_24px_70px_rgba(23,27,43,0.24)] overflow-hidden border border-black/8 transition-all p-5 sm:p-6 flex flex-col justify-between">
+      
+      <!-- Top Minimal Header -->
+      <div class="flex items-center justify-between">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-bold">
+          <span id="nara-status-dot" class="w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse"></span>
+          <span id="nara-status-label">NARA · Live Voice Accompaniment</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <button type="button" id="nara-audio-toggle" onclick="toggleNaraMute()" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold flex items-center gap-1 transition-colors" title="Activar/Silenciar voz">
+            <span class="material-symbols-outlined notranslate text-[15px]" translate="no" id="nara-audio-icon">&#xe050;</span>
+            <span id="nara-audio-text">Voice Active</span>
+          </button>
+          <button type="button" onclick="toggleHistoryView()" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold transition-colors">
+            History
+          </button>
+        </div>
+      </div>
+
+      <!-- VISTA PRINCIPAL: ESFERA DE NUBE EN MOVIMIENTO (ESTILO CHATGPT VOICE) -->
+      <div id="nara-voice-stage" class="py-6 flex flex-col items-center justify-center text-center my-1">
+        <!-- Esfera de Nube Fluida -->
+        <div class="relative flex items-center justify-center my-2 cursor-pointer group" onclick="triggerNaraListenOrSpeak()" title="Toca para hablar o escuchar a NARA">
+          <!-- Anillos de onda de voz -->
+          <div id="nara-wave-1" class="absolute w-32 h-32 rounded-full border-2 border-[#60A5FA]/50 nara-ring-anim pointer-events-none"></div>
+          <div id="nara-wave-2" class="absolute w-32 h-32 rounded-full border-2 border-[#93C5FD]/40 nara-ring-anim pointer-events-none" style="animation-delay: 0.7s;"></div>
+          
+          <!-- Esfera central igual a la referencia -->
+          <div id="nara-orb" class="relative w-32 h-32 rounded-full nara-voice-sphere overflow-hidden flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-x-[-20%] bottom-[-10%] h-[70%] rounded-full nara-cloud-layer blur-xs"></div>
+            <div class="absolute inset-x-[-10%] top-[25%] h-[55%] rounded-full nara-cloud-layer blur-md" style="animation-delay: -2.2s;"></div>
+          </div>
+        </div>
+
+        <!-- Subtítulos en vivo de lo que dice el usuario y lo que responde NARA -->
+        <div class="mt-5 px-2 space-y-2 min-h-[82px] flex flex-col justify-center">
+          <div id="user-spoken-pill" class="hidden self-center inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-soft text-primary text-xs font-semibold">
+            <span class="material-symbols-outlined notranslate text-[14px]" translate="no">&#xe029;</span>
+            <span id="user-spoken-text">"I feel overwhelmed..."</span>
+          </div>
+          <p id="nara-live-caption" class="text-sm sm:text-[15px] font-medium text-slate-800 leading-relaxed">
+            “Hello, I am <strong class="text-[#2563EB]">NARA</strong>, your emotional companion. How are you feeling today, and what stage of your journey are you navigating?”
+          </p>
+        </div>
+
+        <!-- Botones de Simulación de Voz (Para demostrar al jefe con 1 clic sin escribir) -->
+        <div class="w-full mt-4 pt-3 border-t border-slate-100">
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+            🎙️ Speak into your mic or tap to simulate your voice in the demo:
+          </span>
+          <div class="flex flex-wrap justify-center gap-1.5">
+            <button type="button" onclick="simulateVoiceInput('Hello Nara, I am having a hard day, I feel scared')" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-[#EFF6FF] hover:text-[#2563EB] text-slate-700 text-xs font-semibold transition-all flex items-center gap-1 shadow-2xs">
+              <span class="material-symbols-outlined notranslate text-[14px] text-[#3B82F6]" translate="no">&#xe91f;</span>
+              <span>"I'm having a hard day, I'm scared"</span>
+            </button>
+            <button type="button" onclick="simulateVoiceInput('I am in chemotherapy and feeling completely exhausted')" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-[#EFF6FF] hover:text-[#2563EB] text-slate-700 text-xs font-semibold transition-all flex items-center gap-1 shadow-2xs">
+              <span class="material-symbols-outlined notranslate text-[14px] text-[#3B82F6]" translate="no">&#xe91f;</span>
+              <span>"I'm in chemotherapy"</span>
+            </button>
+            <button type="button" onclick="simulateVoiceInput('Yes, let us breathe together please')" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-[#EFF6FF] hover:text-[#2563EB] text-slate-700 text-xs font-semibold transition-all flex items-center gap-1 shadow-2xs">
+              <span class="material-symbols-outlined notranslate text-[14px] text-[#3B82F6]" translate="no">&#xefd8;</span>
+              <span>"Let's breathe together"</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISTA OPCIONAL: HISTORIAL ESCRITO -->
+      <div id="chat-stream" class="hidden p-3 my-2 flex flex-col gap-2.5 max-h-[240px] overflow-y-auto bg-slate-50 rounded-2xl">
+        <div class="flex items-start gap-2 max-w-[88%]">
+          <div class="w-7 h-7 rounded-full bg-[#DBEAFE] shrink-0 flex items-center justify-center mt-1 text-[#2563EB] font-bold text-xs">N</div>
+          <div class="bg-white text-slate-800 rounded-2xl rounded-tl-xs p-3 text-xs leading-relaxed shadow-2xs border border-slate-100">
+            Hello, I am NARA, your emotional companion. How are you feeling right now, and how can I support you?
+          </div>
+        </div>
+      </div>
+
+      <!-- BARRA INFERIOR ESTILO PÍLDORA (IDÉNTICA A LA IMAGEN DE REFERENCIA) -->
+      <div class="mt-1 flex items-center gap-2 bg-white rounded-full px-3 py-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-slate-200/90">
+        <button type="button" onclick="toggleHistoryView()" class="w-8 h-8 rounded-full hover:bg-slate-100 text-slate-600 flex items-center justify-center transition-colors shrink-0 text-xl font-light" title="Show/Hide text history">
+          +
+        </button>
+        <input id="chat-input" type="text" placeholder="Type or speak to NARA..."
+               class="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-sm text-slate-800 placeholder:text-slate-400 px-1"
+               onkeydown="if(event.key==='Enter') submitChatInput()" />
+        <button type="button" id="nara-mic-btn" onclick="startRealSpeechRecognition()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-all shrink-0" title="Speak por micrófono con NARA">
+          <span class="material-symbols-outlined notranslate text-[19px]" translate="no" id="nara-mic-icon">&#xe029;</span>
+        </button>
+        <button type="button" onclick="closeVoiceWidget()" class="w-9 h-9 rounded-full bg-[#2B7FFF] hover:bg-[#1D4ED8] text-white flex items-center justify-center transition-all shrink-0 shadow-xs" title="Close conversation">
+          <span class="material-symbols-outlined notranslate text-[19px]" translate="no">&#xe5cd;</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="chat-greeting-pill" class="hidden sm:flex items-center gap-2 bg-surface-container-lowest px-3.5 py-1.5 rounded-full shadow-[0_8px_24px_rgba(45,49,66,0.12)] text-on-surface font-label-sm text-label-sm border border-secondary-fixed/60">
+      <span class="w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse"></span>
+      <span>🎙️ Talk to NARA with your voice, no typing needed</span>
+      <button type="button" class="text-[#2563EB] font-bold hover:underline ml-1" onclick="toggleChatWidget()">Speak</button>
+    </div>
+
+    <button type="button" onclick="toggleChatWidget()" class="flex items-center gap-3 bg-surface-container-lowest text-on-surface shadow-[0_8px_30px_rgba(45,49,66,0.16)] hover:shadow-[0_16px_36px_rgba(212,131,114,0.28)] p-1.5 pr-4 rounded-full transition-all hover:bg-surface-container-low border border-secondary-fixed/50 cursor-pointer">
+      <div class="relative">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#FBE5E8] to-[#F5C6CE] flex items-center justify-center shadow-inner">
+          <svg viewBox="0 0 120 96" class="w-12 h-10 animate-float-mascot"><use href="#luz-cloud-wink"/></svg>
+        </div>
+        <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#2B7FFF] text-white text-[10px] font-bold rounded-full flex items-center justify-center ring-2 ring-surface-container-lowest">🎙️</span>
+        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span>
+      </div>
+      <div class="flex flex-col text-left">
+        <span class="font-label-md text-label-md font-bold text-on-surface leading-snug">NARA · Voice 24/7</span>
+        <span class="font-label-sm text-label-sm text-tertiary font-semibold">Speak or type to me</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    function setActiveDock(clickedEl) {
+      document.querySelectorAll('.dock-item').forEach(item => {
+        item.className = "dock-item shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all flex items-center gap-1.5 text-white/90 hover:text-white hover:bg-white/10";
+      });
+      clickedEl.className = "dock-item active-dock shrink-0 px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all flex items-center gap-1.5 bg-rose-brand text-espresso shadow-sm";
+    }
+
+    let naraVoiceMuted = false;
+    let naraHasGreeted = false;
+    let naraRecognition = null;
+    let isListeningMic = false;
+
+    function toggleChatWidget() {
+      const panel = document.getElementById('floating-chat-panel');
+      const pill = document.getElementById('chat-greeting-pill');
+      if (!panel) return;
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        if (pill) pill.classList.add('sm:hidden');
+        if (!naraHasGreeted) {
+          naraHasGreeted = true;
+          speakAsNara("Hello sweetheart... I'm Nara, your friend and safe space. You don't have to pretend everything is okay here or be the strong one. How are you really feeling today? Tell me, I'm listening with all my heart.");
+        }
+      } else {
+        closeVoiceWidget();
+      }
+    }
+
+    function closeVoiceWidget() {
+      const panel = document.getElementById('floating-chat-panel');
+      const pill = document.getElementById('chat-greeting-pill');
+      if (panel) panel.classList.add('hidden');
+      if (pill) pill.classList.remove('sm:hidden');
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      if (naraRecognition && isListeningMic) {
+        try { naraRecognition.stop(); } catch (e) {}
+      }
+      setOrbState('idle');
+    }
+
+    function toggleNaraMute() {
+      naraVoiceMuted = !naraVoiceMuted;
+      const icon = document.getElementById('nara-audio-icon');
+      const text = document.getElementById('nara-audio-text');
+      if (naraVoiceMuted) {
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        if (icon) icon.innerText = 'volume_off';
+        if (text) text.innerText = 'Muted';
+        setOrbState('idle');
+      } else {
+        if (icon) icon.innerText = 'volume_up';
+        if (text) text.innerText = 'Voice Active';
+      }
+    }
+
+    function toggleHistoryView() {
+      const stream = document.getElementById('chat-stream');
+      if (stream) stream.classList.toggle('hidden');
+    }
+
+    function setOrbState(state) {
+      const orb = document.getElementById('nara-orb');
+      const wave1 = document.getElementById('nara-wave-1');
+      const wave2 = document.getElementById('nara-wave-2');
+      const statusLabel = document.getElementById('nara-status-label');
+      const statusDot = document.getElementById('nara-status-dot');
+      const micBtn = document.getElementById('nara-mic-btn');
+      const micIcon = document.getElementById('nara-mic-icon');
+
+      if (!orb) return;
+      if (state === 'listening') {
+        orb.classList.add('listening-mode');
+        if (wave1) wave1.className = "absolute w-32 h-32 rounded-full border-2 border-[#E27D90]/60 nara-ring-anim pointer-events-none";
+        if (wave2) wave2.className = "absolute w-32 h-32 rounded-full border-2 border-[#F472B6]/45 nara-ring-anim pointer-events-none";
+        if (statusLabel) statusLabel.innerText = "Listening to your voice now...";
+        if (statusDot) statusDot.className = "w-2 h-2 rounded-full bg-[#E27D90] animate-ping";
+        if (micBtn) micBtn.className = "w-9 h-9 rounded-full bg-[#E27D90] text-white flex items-center justify-center transition-all shrink-0 animate-pulse";
+        if (micIcon) micIcon.innerText = "graphic_eq";
+      } else if (state === 'speaking') {
+        orb.classList.remove('listening-mode');
+        if (wave1) wave1.className = "absolute w-32 h-32 rounded-full border-2 border-[#60A5FA]/60 nara-ring-anim pointer-events-none";
+        if (wave2) wave2.className = "absolute w-32 h-32 rounded-full border-2 border-[#93C5FD]/45 nara-ring-anim pointer-events-none";
+        if (statusLabel) statusLabel.innerText = "NARA is speaking to you...";
+        if (statusDot) statusDot.className = "w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse";
+        if (micBtn) micBtn.className = "w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-all shrink-0";
+        if (micIcon) micIcon.innerText = "mic";
+      } else {
+        orb.classList.remove('listening-mode');
+        if (wave1) wave1.className = "hidden";
+        if (wave2) wave2.className = "hidden";
+        if (statusLabel) statusLabel.innerText = "NARA · Ready to listen";
+        if (statusDot) statusDot.className = "w-2 h-2 rounded-full bg-emerald-500";
+        if (micBtn) micBtn.className = "w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-all shrink-0";
+        if (micIcon) micIcon.innerText = "mic";
+      }
+    }
+
+    function speakAsNara(text) {
+      const caption = document.getElementById('nara-live-caption');
+      if (caption) caption.innerHTML = `“${text}”`;
+
+      if (naraVoiceMuted || !('speechSynthesis' in window)) {
+        setOrbState('speaking');
+        setTimeout(() => setOrbState('idle'), 3500);
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.96;
+      utterance.pitch = 1.05;
+
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(v => v.lang.startsWith('es') && (v.name.includes('Sabina') || v.name.includes('Paulina') || v.name.includes('Helena') || v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Female'))) || voices.find(v => v.lang.startsWith('es'));
+      if (preferredVoice) utterance.voice = preferredVoice;
+
+      utterance.onstart = () => setOrbState('speaking');
+      utterance.onend = () => setOrbState('idle');
+      utterance.onerror = () => setOrbState('idle');
+
+      setOrbState('speaking');
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function triggerNaraListenOrSpeak() {
+      if (isListeningMic) {
+        if (naraRecognition) naraRecognition.stop();
+        return;
+      }
+      startRealSpeechRecognition();
+    }
+
+    function startRealSpeechRecognition() {
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRec) {
+        simulateVoiceInput('Hello Nara, I am having a hard day in chemotherapy');
+        return;
+      }
+      if (isListeningMic && naraRecognition) {
+        naraRecognition.stop();
+        return;
+      }
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+      naraRecognition = new SpeechRec();
+      naraRecognition.lang = 'en-US';
+      naraRecognition.interimResults = false;
+      naraRecognition.maxAlternatives = 1;
+
+      naraRecognition.onstart = () => {
+        isListeningMic = true;
+        setOrbState('listening');
+      };
+      naraRecognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        simulateVoiceInput(transcript);
+      };
+      naraRecognition.onerror = () => {
+        isListeningMic = false;
+        setOrbState('idle');
+      };
+      naraRecognition.onend = () => {
+        isListeningMic = false;
+      };
+      try {
+        naraRecognition.start();
+      } catch (e) {
+        simulateVoiceInput('Hello Nara, I am having a hard day in chemotherapy');
+      }
+    }
+
+    function simulateVoiceInput(userText) {
+      isListeningMic = false;
+      const pill = document.getElementById('user-spoken-pill');
+      const pillText = document.getElementById('user-spoken-text');
+      if (pill && pillText) {
+        pillText.innerText = `You: "${userText}"`;
+        pill.classList.remove('hidden');
+      }
+      simulateSendPrompt(userText);
+    }
+
+    // Tab switching for medical phases
+    const phaseData = {
+      1: {
+        focus: "Fase en foco: Newly Diagnosed",
+        title: "Fase 1: Newly Diagnosed - Tu Guía de Contención y Primeros Pasos",
+        desc: "The initial emotional impact is overwhelming. Here you will learn to quiet information overload, which questions to ask your doctor, and how to breathe through uncertainty.",
+        badge: "Guía de Primeros 15 Días",
+        c1_icon: "psychology_alt", c1_title: "El Shock y las Emociones", c1_desc: "Técnicas de regulación somática para cuando la mente no para. Está bien sentir miedo, rabia o entumecimiento.",
+        c2_icon: "menu_book", c2_title: "Fear-Free Medical Glossary", c2_desc: "What hormone receptors (ER, PR, HER2) and Ki-67 mean, explained in gentle, clear language.",
+        c3_icon: "contact_support", c3_title: "Questions for Your Doctor", c3_desc: "Downloadable checklist with 12 essential questions for your next oncology consultation."
+      },
+      2: {
+        focus: "Phase in Focus: Chemotherapy & Infusions",
+        title: "Your Weekly Care & Relief Plan (Chemotherapy)",
+        desc: "Diseñado con psicooncólogas y enfermeras de infusión: pasos concretos y gentiles para que recuperes el control de tus sensaciones.",
+        badge: "Ciclo 3 de 6",
+        c1_icon: "luggage", c1_title: "Before your infusion", c1_desc: "Arma tu bolso de confort desde la noche anterior: manta térmica liviana, calcetines afelpados, caramelos de jengibre natural y auriculares.",
+        c2_icon: "water_drop", c2_title: "Days 1 to 5 post-chemo", c2_desc: "Protocolo de hidratación guiada a sorbos (mínimo 2 litros diarios). Batidos fríos suaves y descanso horizontal programado sin culpa.",
+        c3_icon: "ac_unit", c3_title: "Key Symptom Relief", c3_desc: "Uso de cubiertos de bambú para sabor metálico. Baños de hielo en guantes para prevenir neuropatía y compresas tibias en ojos."
+      },
+      3: {
+        focus: "Fase en foco: Quirófano y Recuperación",
+        title: "Fase 3: Cirugía, Mastectomía y Reconstrucción",
+        desc: "Acompañamiento integral para el prequirófano, el despertar y el proceso de abrazar tu nuevo cuerpo con compasión y cuidado.",
+        badge: "Preparación Quirúrgica",
+        c1_icon: "airline_seat_flat", c1_title: "Preparando el Regreso a Casa", c1_desc: "Cojines en forma de corazón para proteger la axila, camisas con botones delanteros y apoyo para el aseo personal.",
+        c2_icon: "vaccines", c2_title: "Cuidado de Drenajes sin Temor", c2_desc: "Tutorial en video paso a paso para medir y vaciar los drenajes de forma higiénica y sin dolor.",
+        c3_icon: "favorite", c3_title: "Reconciliación frente al Espejo", c3_desc: "Acompañamiento psicoemocional guiado para el momento en que veas tu cicatriz por primera vez."
+      },
+      4: {
+        focus: "Fase en foco: Terapia Continua",
+        title: "Fase 4: Radioterapia y Terapia Hormonal",
+        desc: "Cuidado dérmico especializado y estrategias efectivas para mitigar sofocos, dolores articulares y fatiga acumulativa.",
+        badge: "Sesión 14 de 25",
+        c1_icon: "water", c1_title: "Protección de la Piel Radiada", c1_desc: "Cremas con caléndula aprobadas por radioterapia, prendas 100% de algodón suave y protección solar total.",
+        c2_icon: "device_thermostat", c2_title: "Manejo de Sofocos y Bochorno", c2_desc: "Técnicas de ventilación y fitoterapia segura para reducir la intensidad de los golpes de calor hormonales.",
+        c3_icon: "directions_walk", c3_title: "Rigidez y Flexibilidad Diaria", c3_desc: "Estiramientos de bajo impacto para mantener la movilidad del hombro y lubricar articulaciones."
+      },
+      5: {
+        focus: "Fase en foco: Sobrevivencia y Remisión",
+        title: "Fase 5: Life in Remission & Nuevos Comienzos",
+        desc: "El tratamiento termina pero el proceso de sanación continúa: gestionar el temor a la recaída y florecer en tu nueva normalidad.",
+        badge: "Controles & Bienestar",
+        c1_icon: "sentiment_calm", c1_title: "Superando el 'Scanxiety'", c1_desc: "Herramientas cognitivas para no paralizarte las semanas previas a las mastografías y análisis de control.",
+        c2_icon: "restaurant", c2_title: "Nutrición Celular Vital", c2_desc: "Alimentación antiinflamatoria basada en alimentos reales para recuperar tu energía y vitalidad celular.",
+        c3_icon: "nature_people", c3_title: "Tu Nueva Identidad", c3_desc: "Honrar a la persona que sobrevivió y trazar metas vitales con renovado sentido de gratitud y propósito."
+      }
+    };
+
+    function setEtapa(stageNum) {
+      for (let i = 1; i <= 5; i++) {
+        const tab = document.getElementById('tab-etapa-' + i);
+        const indicator = tab.querySelector('.tab-indicator');
+        if (i === stageNum) {
+          tab.className = "phase-tab text-left p-space-md rounded-2xl bg-primary text-on-primary shadow-lg ring-2 ring-primary/20 transition-all flex flex-col justify-between group active-phase";
+          tab.querySelectorAll('span, h3, p').forEach(el => {
+            el.classList.remove('text-on-surface', 'text-on-surface-variant', 'text-primary');
+            el.classList.add('text-on-primary');
+          });
+          if (indicator) {
+            indicator.classList.remove('opacity-0');
+            indicator.innerHTML = '<span>Fase seleccionada</span> •';
+          }
+        } else {
+          tab.className = "phase-tab text-left p-space-md rounded-2xl bg-surface-container-lowest text-on-surface shadow-sm hover:shadow-md transition-all flex flex-col justify-between group";
+          tab.querySelectorAll('span').forEach(el => {
+            el.classList.remove('text-on-primary');
+            if (!el.classList.contains('tab-indicator')) el.classList.add('text-on-surface-variant');
+          });
+          tab.querySelectorAll('h3').forEach(el => el.className = "font-headline-md text-headline-md text-on-surface text-[19px] leading-tight");
+          tab.querySelectorAll('p').forEach(el => el.className = "font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2");
+          if (indicator) {
+            indicator.classList.add('opacity-0');
+            indicator.classList.remove('text-on-primary');
+            indicator.classList.add('text-primary');
+            indicator.innerHTML = '<span>Ver fase</span> →';
+          }
+        }
+      }
+
+      const data = phaseData[stageNum];
+      if (data) {
+        document.getElementById('phase-focus-label').innerText = data.focus;
+        document.getElementById('phase-content-title').innerText = data.title;
+        document.getElementById('phase-content-desc').innerText = data.desc;
+        document.getElementById('phase-content-badge').innerText = data.badge;
+        document.getElementById('c1-icon').innerText = data.c1_icon;
+        document.getElementById('c1-title').innerText = data.c1_title;
+        document.getElementById('c1-desc').innerText = data.c1_desc;
+        document.getElementById('c2-icon').innerText = data.c2_icon;
+        document.getElementById('c2-title').innerText = data.c2_title;
+        document.getElementById('c2-desc').innerText = data.c2_desc;
+        document.getElementById('c3-icon').innerText = data.c3_icon;
+        document.getElementById('c3-title').innerText = data.c3_title;
+        document.getElementById('c3-desc').innerText = data.c3_desc;
+      }
+    }
+
+    function updateEnergy(val) {
+      const badge = document.getElementById('energy-val-badge');
+      let text = "Moderada";
+      if (val <= 3) text = "Baja - Necesito calma";
+      else if (val <= 7) text = "Equilibrada - Un paso a la vez";
+      else text = "Alta - Me siento con fuerza";
+      badge.innerText = val + " de 10 - " + text;
+    }
+
+    function toggleTag(btn) {
+      if (btn.classList.contains('bg-primary')) {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('bg-surface-container', 'text-on-surface');
+      } else {
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+    }
+
+    function saveRecord() {
+      const feedback = document.getElementById('save-feedback');
+      feedback.classList.remove('hidden');
+      setTimeout(() => {
+        feedback.classList.add('hidden');
+      }, 4000);
+    }
+
+    function exportReport() {
+      const msg = document.getElementById('pdf-toast-msg');
+      msg.innerText = "✓ Generando reporte clínico en PDF de los últimos 7 días...";
+      msg.className = "font-label-sm text-label-sm text-center text-tertiary font-bold mt-2";
+    }
+
+    function exportKitPDF() {
+      const msg = document.getElementById('pdf-toast-msg');
+      if (msg) {
+        msg.innerText = "✓ Descargando Kit 'Mis Primeros 15 Días' (PDF)...";
+        msg.className = "font-label-sm text-label-sm text-center text-tertiary font-bold mt-2";
+      }
+    }
+
+    function playCapsule(title) {
+      const banner = document.getElementById('capsule-player-banner');
+      const titleEl = document.getElementById('capsule-player-title');
+      if (banner && titleEl) {
+        titleEl.innerText = title;
+        banner.classList.remove('hidden');
+      }
+    }
+
+    function reservePatientCircle(btn) {
+      btn.innerText = "✓ Lugar reservado (Miércoles 18:00h)";
+      btn.className = "w-full py-space-sm rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md shadow-md transition-all";
+    }
+
+    function submitChatInput() {
+      const input = document.getElementById('chat-input');
+      if (input && input.value.trim() !== '') {
+        simulateVoiceInput(input.value.trim());
+        input.value = '';
+      }
+    }
+
+    function getNaraEmpatheticReply(userText) {
+      const lower = userText.toLowerCase();
+      if ((lower.includes("bad") || lower.includes("afraid") || lower.includes("scared") || lower.includes("cry") || lower.includes("hard")) && lower.includes("chemo")) {
+        return "Oh my dear, come here and let me hold you close. I'm so sorry you're having such a tough day during chemotherapy. You don't have to push yourself or pretend to be okay; just breathe gently with me. Your only job today is to rest. Would you like us to take a slow one-minute breathing pause together to ease your body?";
+      }
+      if (lower.includes("bad") || lower.includes("afraid") || lower.includes("scared") || lower.includes("alone") || lower.includes("anxious") || lower.includes("fear")) {
+        return "Hello sweetheart, I'm right here with you... I'm Nara, your friend. I hear you and I won't let go of your hand. It's so completely normal to feel afraid or want to cry today; you don't have to carry this alone. Tell me: what stage of your journey are you in right now, newly diagnosed or in treatment?";
+      }
+      if (lower.includes("chemo") || lower.includes("exhausted") || lower.includes("tired") || lower.includes("nausea") || lower.includes("sick")) {
+        return "I'm holding your hand tight, friend. I know how deeply chemo drains both body and spirit. Give yourself permission to rest without any guilt today, and try taking tiny sips of ice-cold water with mint or ginger. I'll stay right here talking softly with you. Shall we do a gentle breathing exercise together?";
+      }
+      if (lower.includes("breathe") || lower.includes("yes") || lower.includes("calm") || lower.includes("relax")) {
+        return "Let's do it together, dear. Gently close your eyes... Take a deep breath in through your nose, feeling calm in your chest... one, two, three, four... Hold it gently... and let it out slowly, releasing the weight from your shoulders. You are doing wonderfully. I am right here with you.";
+      }
+      return "I'm listening with all my heart, friend. You don't have to type when you feel exhausted; just talk to me anytime and I'll walk beside you step by step. How is your body feeling right now?";
+    }
+
+    function simulateSendPrompt(userText) {
+      const stream = document.getElementById('chat-stream');
+      if (stream) {
+        const userMsg = document.createElement('div');
+        userMsg.className = 'flex items-start justify-end max-w-[85%] self-end';
+        userMsg.innerHTML = `<div class="bg-[#2B7FFF] text-white rounded-2xl rounded-tr-xs p-2.5 text-xs leading-relaxed shadow-xs">${userText}</div>`;
+        stream.appendChild(userMsg);
+        stream.scrollTop = stream.scrollHeight;
+      }
+      setTimeout(() => {
+        const responseText = getNaraEmpatheticReply(userText);
+        speakAsNara(responseText);
+        if (stream) {
+          const botMsg = document.createElement('div');
+          botMsg.className = 'flex items-start gap-2 max-w-[88%]';
+          botMsg.innerHTML = `
+            <div class="w-7 h-7 rounded-full bg-[#DBEAFE] shrink-0 flex items-center justify-center mt-1 text-[#2563EB] font-bold text-xs">N</div>
+            <div class="bg-white text-slate-800 rounded-2xl rounded-tl-xs p-3 text-xs leading-relaxed shadow-2xs border border-slate-100">${responseText}</div>
+          `;
+          stream.appendChild(botMsg);
+          stream.scrollTop = stream.scrollHeight;
+        }
+      }, 350);
+    }
+  </script>
+</body>
+</html>
+
